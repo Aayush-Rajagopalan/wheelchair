@@ -48,46 +48,7 @@ export default async function Wheelchair({
               )}
             </CardContent>
           </Card>
-          <Card className="h-[320px] ">
-            <CardHeader>
-              <CardTitle>Wheelchair Control</CardTitle>
-            </CardHeader>
-            <div className="flex items-center justify-center">
-              <div className="h-64 w-64 grid grid-cols-3 grid-rows 3">
-                <div className="flex items-center justify-center"></div>
-                <div className="flex items-center justify-center">
-                  {" "}
-                  <Button variant={"outline"} size="icon">
-                    <ArrowBigUp />
-                  </Button>
-                </div>
-                <div className="flex items-center justify-center"></div>
-                <div className="flex items-center justify-center">
-                  {" "}
-                  <Button variant={"outline"} size="icon">
-                    <ArrowBigLeft />
-                  </Button>
-                </div>
-                <div className="flex items-center justify-center">
-                  <Command />
-                </div>
-                <div className="flex items-center justify-center">
-                  {" "}
-                  <Button variant={"outline"} size="icon">
-                    <ArrowBigRight />
-                  </Button>
-                </div>
-                <div className="flex items-center justify-center"></div>
-                <div className="flex items-center justify-center">
-                  {" "}
-                  <Button variant={"outline"} size="icon">
-                    <ArrowBigDown />
-                  </Button>
-                </div>
-                <div className="flex items-center justify-center"></div>
-              </div>
-            </div>
-          </Card>
+          
 
           <Card>
             <CardHeader>
