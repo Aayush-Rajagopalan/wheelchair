@@ -9,7 +9,7 @@ export default function Wheelchair() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      fetch("http://home.aayus.me:3000/")
+      fetch("https://wheelchair-server.vercel.app")
         .then((res) => res.json())
         .then((data) => {
           setObstacle(data);
