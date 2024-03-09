@@ -1,19 +1,52 @@
-import { IPForm } from "@/components/ip_form";
-import { Spotlight } from "@/components/ui/spotlight";
+"use client";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Navbar } from "@/components/ui/navbar";
+import { useEffect, useState } from "react";
 
-export default function Home() {
+export default function Wheelchair() {
+  const [obstacle, setObstacle] = useState(false);
+  let connected = true;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetch("http://home.aayus.me:3000/")
+        .then((res) => res.json())
+        .then((data) => {
+          setObstacle(data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [connected]);
+
+  console.log(obstacle);
+
   return (
-    <div className="h-screen bg-dot-white/[0.2] w-full rounded-md flex md:items-center md:justify-center bg-zinc-950 antialiased relative overflow-hidden">
-      <Spotlight
-        className="-top-20 left-0 md:left-60 md:-top-20"
-        fill="white"
-      />
-      <div className=" p-4 max-w-4xl flex flex-col justify-center  mx-auto relative z-10  w-full pt-20 md:pt-0">
-        <h1 className="mb-4 text-3xl md:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-          Smart Wheelchair.
-        </h1>
-        <IPForm />
+    <>
+      <div className="h-16 mb-3">
+        <Navbar ip={"127.0.0.1"} connected={connected} />
       </div>
-    </div>
+
+      <div className="grid grid-cols-1 h-64 space-y-5 md:space-y-0 md:space-x-5 p-5">
+        <Card>
+          <CardHeader>
+            <CardTitle>Obstacle Detection</CardTitle>
+          </CardHeader>
+          <CardContent className="h-64">
+            {obstacle ? (
+              <div className=" bg-red-500 transition-colors h-full mx-auto rounded-xl flex items-center justify-center">
+                Obstacle detected
+              </div>
+            ) : (
+              <div className=" bg-green-500 transition-colors h-full mx-auto rounded-xl flex items-center justify-center">
+                No obstacles detected
+              </div>
+            )}
+          </CardContent>
+        </Card>
+      </div>
+    </>
   );
 }
