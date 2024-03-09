@@ -26,15 +26,15 @@ export default function Wheelchair() {
   return (
     <>
       <div className="h-16 mb-3">
-        <Navbar ip={"the wheelchair"} connected={connected} />
+        <Navbar ip={"76.76.21.9"} connected={connected} />
       </div>
 
-      <div className="grid grid-cols-1 h-64 space-y-5 md:space-y-0 md:space-x-5 p-5">
+      <div className="grid grid-cols-1 h-[95vh] space-y-5 md:space-y-0 md:space-x-5 p-5">
         <Card>
           <CardHeader>
             <CardTitle>Obstacle Detection</CardTitle>
           </CardHeader>
-          <CardContent className="h-64">
+          <CardContent className="h-full">
             {obstacle ? (
               <div className=" bg-red-500 transition-colors h-full mx-auto rounded-xl flex items-center justify-center">
                 Obstacle detected
