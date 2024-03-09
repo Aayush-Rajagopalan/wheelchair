@@ -26,7 +26,7 @@ export default function Wheelchair() {
   return (
     <>
       <div className="h-16 mb-3">
-        <Navbar ip={"127.0.0.1"} connected={connected} />
+        <Navbar ip={"the wheelchair"} connected={connected} />
       </div>
 
       <div className="grid grid-cols-1 h-64 space-y-5 md:space-y-0 md:space-x-5 p-5">
