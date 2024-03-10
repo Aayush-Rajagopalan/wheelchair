@@ -29,7 +29,7 @@ export default function Wheelchair() {
         <Navbar ip={"76.76.21.9"} connected={connected} />
       </div>
 
-      <div className="grid grid-cols-1 h-[90vh] space-y-5 md:space-y-0 md:space-x-5 p-5">
+      <div className="grid grid-cols-1 h-[85vh] space-y-5 md:space-y-0 md:space-x-5 p-5">
         <Card>
           <CardHeader>
             <CardTitle>Obstacle Detection</CardTitle>
